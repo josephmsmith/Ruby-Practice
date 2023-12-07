@@ -17,8 +17,11 @@ def time_to_leave
     print "what is the number of available agents? : "
     num_agents = gets.chomp.to_i
     print "what are the other names of people? : "
-    othernames = (gets.chomp.split(' ')<<yourname).sort
-    puts othernames
+    allnames = (gets.chomp.split(' ')<<yourname).sort
+    
+    index_of_yourname = allnames.index(yourname)
+    total_time = 20+((index_of_yourname/num_agents).floor * 20)
+    puts total_time
     
 end
 time_to_leave
