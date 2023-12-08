@@ -1,4 +1,4 @@
-
+#!/usr/bin/env ruby
 # exercise introduces classes
 
 class Lasagna
