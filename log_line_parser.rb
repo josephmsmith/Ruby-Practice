@@ -16,7 +16,7 @@ class LogLineParser
   end
 
   def reformat
-    raise 'Please implement the LogLineParser#reformat method'
+    message + " (" + log_level + ")"
   end
 end
 
@@ -24,3 +24,4 @@ end
 puts LogLineParser.new("[WARNING]: \tTimezone not set \r\n").message
 puts LogLineParser.new('[ERROR]: Disk full').log_level
 puts LogLineParser.new('[WARNING]: Unsafe password').log_level
+puts LogLineParser.new("[ERROR]: \t Corrupt disk\t \t \r\n").reformat
