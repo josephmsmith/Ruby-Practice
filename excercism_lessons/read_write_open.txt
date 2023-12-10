@@ -1,0 +1,5 @@
+This is a text document.
+
+You can access it because I am not hardcoding and I am asking you to access a documents path.
+
+Thank you, you may now close the file :-)
