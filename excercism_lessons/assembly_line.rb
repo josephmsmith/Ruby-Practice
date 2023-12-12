@@ -14,8 +14,9 @@ The following table shows how speed influences the success rate:
 9: 80% success rate.
 10: 77% success rate.
 
-2. 
-
+2. Implement the AssemblyLine#production_rate_per_hour method to calculate the assembly line's production rate per hour, 
+taking into account its success rate. 
+Note that the value returned is an instance of Float.
 
 =end
 
@@ -37,9 +38,11 @@ class AssemblyLine
     end
   
     def working_items_per_minute
-      raise 'Please implement the AssemblyLine#working_items_per_minute method'
+      (production_rate_per_hour / 60).floor
     end
-end
+  end
+  
 
 puts AssemblyLine.new(1).production_rate_per_hour
 puts AssemblyLine.new(5).production_rate_per_hour
+puts AssemblyLine.new(8).working_items_per_minute
