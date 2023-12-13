@@ -19,14 +19,14 @@ In this exercise you will be working with savings accounts.
 module SavingsAccount
     # calc interest_rate based on balance, initiate using self 
     def self.interest_rate(balance)
-        if (0..1000).include?(balance)
+        if balance < 0
+            3.213
+        elsif balance < 1000
             0.5
-        elsif (1000..5000).include?(balance)
+        elsif balance < 5000
             1.621
-        elsif balance >= 5000
-            2.475
         else
-            -3.213
+            2.475
         end
     end
     # calc balance using interest rate 
