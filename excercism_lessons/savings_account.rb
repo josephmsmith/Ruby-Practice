@@ -31,13 +31,23 @@ module SavingsAccount
     end
     # calc balance using interest rate 
     def self.annual_balance_update(balance)
-        balance + (interest_rate(balance) * balance)
+        balance * (1+ interest_rate(balance)/100)
+    end
+    
+    def self.years_before_desired_balance(current_balance, desired_balance)
+        years = 1
+        while annual_balance_update(current_balance) < desired_balance
+            current_balance += current_balance * (interest_rate(current_balance) / 100)
+            years += 1
+        end
+        years.floor
     end
 end
 
 puts SavingsAccount.interest_rate(200)
 # test
-# puts SavingsAccount.interest_rate(1007)
-# puts SavingsAccount.interest_rate(5045)
-# puts SavingsAccount.interest_rate(-34)
+puts SavingsAccount.interest_rate(1007)
+puts SavingsAccount.interest_rate(5045)
+puts SavingsAccount.interest_rate(-34)
 puts SavingsAccount.annual_balance_update(200)
+puts SavingsAccount.years_before_desired_balance(8080.80,9090.9)
