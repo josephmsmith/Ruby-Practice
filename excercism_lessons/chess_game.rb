@@ -15,11 +15,11 @@ module Chess
     def self.move_message(first_name, last_name, square)
         rank = square[1].to_i
         file = square[0].upcase
-        puts valid_square?(file,rank) ? nick_name(first_name, last_name) + " moved to #{square}" : nick_name(first_name, last_name) + " attempted to move to #{square}, but that is not a valid square"
+        valid_square?(file,rank) ? nick_name(first_name, last_name) + " moved to #{square}" : nick_name(first_name, last_name) + " attempted to move to #{square}, but that is not a valid square"
     end
 end
 
 
 #test
-Chess.move_message("John", "Doe", "A1")
-Chess.move_message("Lindsy", "Mobley", "B4")
+puts Chess.move_message("John", "Doe", "A1")
+puts Chess.move_message("Lindsy", "Mobley", "B4")
