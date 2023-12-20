@@ -55,3 +55,4 @@ puts BirdCount.new([0,0,1,0,0,1]).yesterday
 puts BirdCount.new([0, 0, 1, 0, 0, 1, 0]).total
 puts BirdCount.new([4, 9, 5, 7, 8, 8, 2]).busy_days
 BirdCount.new([4, 5, 9, 10, 9, 4, 3]).day_without_birds?
+## END
